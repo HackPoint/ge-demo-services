@@ -1,0 +1,37 @@
+<h2>Examples Directives (BuiltIn, Attribute, Custom)</h2>
+
+<!--NgFor/NgIf-->
+<ul>
+  <li
+    *ngFor="let o of [1, 2, 3, 4, 5, 6, 7]; let i = index"
+    style="list-style-type: none;"
+  >
+    <p *ngIf="o % 2 === 0">Some text {{ o }}</p>
+  </li>
+</ul>
+
+<!--NgSwitch-->
+<ul>
+  <li
+    *ngFor="let o of [1, 2, 3, 4, 5, 6, 7]; let i = index"
+    style="list-style-type: none;"
+  >
+    <div [ngSwitch]="o">
+      <p *ngSwitchCase="1">Success {{ o }}</p>
+      <p *ngSwitchCase="6">Success {{ o }}</p>
+      <p *ngSwitchCase="3">Success {{ o }}</p>
+    </div>
+  </li>
+</ul>
+
+<!--NgStyle-->
+<ul>
+  <li
+    *ngFor="let o of [1, 2, 3, 4, 5, 6, 7]; let i = index"
+    style="list-style-type: none;"
+  >
+    <p [ngStyle]="{ 'background-color': o % 2 === 0 ? 'yellow' : 'green' }">
+      Some text {{ o }}
+    </p>
+  </li>
+</ul>
