@@ -35,3 +35,12 @@
     </p>
   </li>
 </ul>
+
+<!--Services-->
+<ul *ngIf="(users$ | async)?.length">
+  <li *ngFor="let user of users$ | async">
+    {{ user.name }}
+
+    <img src="{{ user.avatar }}" />
+  </li>
+</ul>
